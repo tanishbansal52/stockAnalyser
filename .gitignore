@@ -1,0 +1,42 @@
+.venv
+.idea
+# Virtual environment
+.venv
+
+# IDE configuration files
+.idea/
+
+# macOS system files
+.DS_Store
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django specific files
+db.sqlite3
+
+# Node.js dependencies
+node_modules/
+
+# Build directories
+build/
+dist/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# Coverage reports
+coverage/
+*.cover
+
+# Temporary files
+*.tmp
+*.temp
+
+# Ignore frontend build artifacts
+frontend/build/
