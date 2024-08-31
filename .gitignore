@@ -40,3 +40,4 @@ coverage/
 
 # Ignore frontend build artifacts
 frontend/build/
+services/interview.py
