@@ -63,7 +63,7 @@ export default function Chart({companyName, sector}) {
         <Plot
             data={chart_data}
             layout={{
-                width: 600, 
+                width: 1200, 
                 height: 400,
                 xaxis: {
                     title: 'Date',
