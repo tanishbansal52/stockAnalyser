@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from .models import stocks
 import services.chartDataGenerator
 import services.main
+from datetime import date
 
 # Create your views here.
 def base(request):
@@ -9,7 +11,22 @@ def base(request):
 
 def get_sentiment(request):
     stock_name = request.GET.get("companyName")
-    sentiment = services.main.request_sentiment(stock_name)
+    try:
+        stock_data = stocks.objects.get(name=stock_name)
+        date_stored = stock_data.date_last_accessed.strftime("%Y-%m-%d")
+        print(date.today,date_stored)
+        today = date.today().strftime("%Y-%m-%d")
+        if today > date_stored:
+            sentiment = services.main.request_sentiment(stock_name)
+            stock_data.sentiment = sentiment
+            stock_data.date_last_accessed = today
+            stock_data.save()
+        else:
+            sentiment = stock_data.sentiment
+    except stocks.DoesNotExist:
+        sentiment = services.main.request_sentiment(stock_name)
+        stock = stocks(name=stock_name,sentiment=sentiment)
+        stock.save()
     return JsonResponse({'sentiment': sentiment})
 
 def get_stock_info(request):
