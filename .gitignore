@@ -22,6 +22,7 @@ node_modules/
 
 # Build directories
 dist/
+frontend/build/
 
 # Logs
 *.log
@@ -37,6 +38,5 @@ coverage/
 *.tmp
 *.temp
 
-# Ignore frontend build artifacts
-frontend/build
+# Extra files
 services/interview.py

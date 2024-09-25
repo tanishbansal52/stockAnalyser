@@ -22,7 +22,6 @@
       }
     ],
     "buildCommand": "./build.sh",
-    "outputDirectory": "frontend/build",
     "installCommand": "echo 'Dependencies are installed in build.sh'",
     "devCommand": "./dev.sh"
   }
