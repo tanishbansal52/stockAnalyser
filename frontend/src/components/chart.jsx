@@ -17,7 +17,7 @@ export default function Chart({companyName, sector}) {
                 }
             }
             fetchData();
-        }, [companyName]
+        }, [companyName, sector]
     );
     if (!data) {
         return <div>Loading chart...</div>;
