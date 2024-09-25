@@ -1,27 +1,28 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "django_app/wsgi.py",
-        "use": "@vercel/python"
-      },
-      {
-        "src": "frontend/package.json",
-        "use": "@vercel/static-build",
-        "config": { "distDir": "frontend/build" }
-      }
-    ],
-    "routes": [
-      {
-        "src": "/static/(.*)",
-        "dest": "/static/$1"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "django_app/wsgi.py"
-      }
-    ],
-    "buildCommand": "./build.sh",
-    "installCommand": "echo 'Dependencies are installed in build.sh'",
-    "devCommand": "./dev.sh"
-  }
+  "version": 2,
+  "builds": [
+    {
+      "src": "django_app/wsgi.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "frontend/build" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "django_app/wsgi.py"
+    }
+  ],
+  "buildCommand": "./build.sh",
+  "installCommand": "echo 'Dependencies are installed in build.sh'",
+  "devCommand": "./dev.sh",
+  "outputDirectory": "frontend/build"
+}
