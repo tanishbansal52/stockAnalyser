@@ -22,7 +22,7 @@ node_modules/
 
 # Build directories
 dist/
-frontend/build/
+# frontend/build/
 
 # Logs
 *.log
@@ -40,3 +40,4 @@ coverage/
 
 # Extra files
 services/interview.py
+vercel.json
