@@ -22,7 +22,7 @@ node_modules/
 
 # Build directories
 dist/
-frontend/build/
+frontend/builds/
 
 # Logs
 *.log
