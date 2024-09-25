@@ -21,7 +21,6 @@ db.sqlite3
 node_modules/
 
 # Build directories
-build/
 dist/
 
 # Logs
