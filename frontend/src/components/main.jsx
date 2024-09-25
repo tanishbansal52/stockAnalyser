@@ -21,7 +21,7 @@ export default function Main() {
         if (company) {
             try {
                 setDisplayInfo(`Loading info...`)
-                const info_response = await fetch(`http://127.0.0.1:8000/getInfo?companyName=${company}`);
+                const info_response = await fetch(`https://stock-analyser-nine.vercel.app/getInfo?companyName=${company}`);
                 const info_data = await info_response.json();
                 if (Object.keys(info_data.info).length === 1)
                     throw new Error()
@@ -31,7 +31,7 @@ export default function Main() {
             }
             try {
                 setDisplaySentiment(`Loading sentiment...`)
-                const sentiment_response = await fetch(`http://127.0.0.1:8000/getSentiment?companyName=${company}`);
+                const sentiment_response = await fetch(`https://stock-analyser-nine.vercel.app/getSentiment?companyName=${company}`);
                 const sentiment_data = await sentiment_response.json();
                 setDisplaySentiment(`${company}'s sentiment is: ${sentiment_data.sentiment}`);
             
